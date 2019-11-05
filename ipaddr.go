@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// IpAddressGen for generate IP Address form subnet example : (192.168.1.1/24)
 func IpAddressGen(subnet string) []string {
 	ipAddress, ipNet, err := net.ParseCIDR(subnet)
 
@@ -15,6 +16,7 @@ func IpAddressGen(subnet string) []string {
 	}
 
 	var ipAddresses []string
+
 	for ipAddress := ipAddress.Mask(ipNet.Mask); ipNet.Contains(ipAddress); inc(ipAddress) {
 		ipAddresses = append(ipAddresses, ipAddress.String())
 	}
