@@ -23,6 +23,7 @@ func main(){
 	}
 
 	fmt.Println(len(ip))
+	// Do stuff with ip address
 
 }
 ```
@@ -87,7 +88,7 @@ func work(ctx context.Context, retChan <-chan string, ctr *Complete) {
 			return
 		case ip := <-retChan:
 			fmt.Println(ip)
-			// DO stuff
+			// Do stuff with ipaddress
 			ctr.Lock.Lock()
 			ctr.N--
 			if ctr.N <= 0 {
