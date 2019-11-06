@@ -28,6 +28,10 @@ func main(){
 }
 ```
 
+```sh
+$ go run apps.go
+```
+
 ### Example Code with goroutine and mutex
 ```go
 package main
